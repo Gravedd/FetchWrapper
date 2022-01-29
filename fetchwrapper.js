@@ -22,34 +22,3 @@ async function fetchpost(url, senddata){
     });
     return await response.json();
 }
-
-    async function SendUserInfoo() {
-        let user = {
-            name: 'John',
-            surname: 'Smith'
-        };
-        let response = await fetch('/article/fetch/post/user', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json;charset=utf-8'
-            },
-            body: JSON.stringify(user)
-        });
-        let result = await response.json();
-        console.log(result)
-    }
-
-
-
-    async function SendUserInfo() {
-        let user = {
-            name: 'John',
-            surname: 'Smith'
-        }
-        let result = await fetchpost('example.com', user)
-        console.log(result)
-    }
-
-
-
-SendUserInfo();
