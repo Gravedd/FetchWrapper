@@ -2,14 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>TEST</title>
 </head>
 <body>
-
 <script src="fetchwrapper.js"></script>
 <script>
-    let response = fetchpost('https://jsonplaceholder.typicode.com/posts/', '')
-    console.log(response)
+    async function post() {
+        let toserver = {
+            title: 'testtitle',
+            body: 'testbody',
+            userId: 1
+        }
+        let response = await fetchpost('https://jsonplaceholder.typicode.com/posts/', toserver);
+        console.log(response);
+    }
+    async function get(){
+        let response = await fetchget('https://jsonplaceholder.typicode.com/todos/1');
+        console.log(response);
+    }
+    //function calls
+    post();
+    get();
 </script>
 </body>
 </html>
